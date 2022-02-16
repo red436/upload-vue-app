@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  #app
+    v-app
+      v-main
+        v-container
+          v-form(ref='form' enctype='multipart/from-data')
+            v-file-input(v-model='chosenFile' label='Choose video to upload' outlined='' accept='.mov,.avi,.mp4,.webm' name='video')
+            v-btn(@click='uploadFile();' elevation='3' color='primary') Upload
+        v-container
+            div Send a note
+            v-textarea(v-model='note')
+            v-btn(@click='sendNote();' elevation='3' color='primary') Send Note
+        v-container
+            v-alert(:type='alertType' v-if='message') {{ message }}

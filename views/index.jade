@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  #app
+    v-app
+      v-main
+        v-container
+          v-form(ref='form' action='/upload' method='POST' enctype='multipart/form-data')
+            v-file-input(label='Choose video to upload:' outlined='' accept='.mov,.avi,.mp4,.webm' name='video')
+            v-btn(type='submit' elevation='3' color='primary') Upload
